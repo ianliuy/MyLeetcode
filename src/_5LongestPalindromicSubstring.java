@@ -81,7 +81,7 @@ public class _5LongestPalindromicSubstring {
 
         public static void main(String[] args){
         String sss = "";
-        sss = longestPalindrome("cbbd");
+        sss = longestPalindrome("abdkbab");
         System.out.println(sss);
     }
 
