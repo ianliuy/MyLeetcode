@@ -79,7 +79,7 @@ public class _5LongestPalindromicSubstring {
             res = cur;
     }
 
-        public static void main(String[] args){
+    public static void main(String[] args){
         String sss = "";
         sss = longestPalindrome("abdkbab");
         System.out.println(sss);
