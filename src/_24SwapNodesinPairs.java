@@ -53,18 +53,25 @@ public class _24SwapNodesinPairs {
      * */
     public ListNode swapPairs(ListNode head) {
         if (head == null || head.next == null) return head;
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-        ListNode l1 = dummy;
-        ListNode l2 = head;
-        while (l2 != null && l2.next != null) {
-            ListNode nextStart = l2.next.next;
-            l1.next = l2.next;
-            l2.next.next = l2;
-            l2.next = nextStart;
-            l1 = l2;
-            l2 = l2.next;
+        ListNode GuardNode = new ListNode(0);
+        ListNode p = GuardNode;
+        GuardNode.next = head;
+        while (head != null && head.next != null) {
+            ListNode tem = head.next;
+            head.next = tem.next;
+            tem.next = head;
+            p.next = tem;
+            p = head;
+            head = head.next;
         }
-        return dummy.next;
+        return GuardNode.next;
     }
+    /**
+     * Success
+     * Details
+     * Runtime: 0 ms,
+     * faster than 100.00% of Java online submissions for Swap Nodes in Pairs.
+     * Memory Usage: 34.6 MB,
+     * less than 100.00% of Java online submissions for Swap Nodes in Pairs.
+     * */
 }
